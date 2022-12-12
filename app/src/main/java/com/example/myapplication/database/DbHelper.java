@@ -71,15 +71,15 @@ public class DbHelper extends SQLiteOpenHelper{
         db.execSQL(create_KhuyenMai);
 
         String INSERT_User = "Insert into User(taiKhoan,hoTen,matKhau,phanQuyen,hinh) values " +
-                "('0999999999','Admin','123456','AD',null)," +
-                "('0777777777','Nguyễn Phúc Ngân','123456','NT',null)," +
-                "('0777777771','Nguyễn Văn Vinh','123456','NT',null)," +
-                "('0777777772','Nguyễn Quốc Tuấn','123456','NT',null)," +
-                "('0777777773','Nguyễn Hoài Lương','123456','NT',null)," +
-                "('0777777774','Nguyễn Quốc Tún','123456','NT',null)," +
+                "('admin','Admin','nghia','AD',null)," +
+                "('0777777777','Tô Trung Kiên','123456','NT',null)," +
+                "('0777777771','Lư Gia Phú','123456','NT',null)," +
+                "('0777777772','Nguyễn Trần Duy Niên','123456','NT',null)," +
+                "('0777777773','Bế Nguyễn Đức Long','123456','NT',null)," +
+                "('0777777774','Nguyễn Hữu Khánh','123456','NT',null)," +
                 "('0777777775','Lê Hoài Như','123456','NT',null)," +
                 "('0777777776','Nguyễn Quốc Tuấn','123456','NT',null)," +
-                "('0888888888','Nguyễn Hoài Lương','123456','CS',null)," +
+                "('0888888888','Lê Quang Lý Anh','123456','CS',null)," +
                 "('0333333333','Nguyễn Hoài Trâm','123456','CS',null)," +
                 "('0333333331','Nguyễn Đức Lương','123456','CS',null)," +
                 "('0333333332','Văn Vinh Nguyễn','123456','CS',null)," +
@@ -107,34 +107,35 @@ public class DbHelper extends SQLiteOpenHelper{
                 "('Sân 5A','150000',5, 6,null)," +
                 "('Sân 5B','220000',5, 6,null)," +
                 "('Sân 5C','220000',5, 6,null)," +
+                "('Sân 7A','220000',7, 9,null)," +
+                "('Sân 5A','150000',5, 9,null)," +
                 "('Sân 7A','220000',7, 7,null)," +
+                "('Sân 5A','150000',5, 10,null)," +
+                "('Sân 5B','150000',5, 10,null)," +
+                "('Sân 7A','220000',7, 13,null)," +
+                "('Sân 7B','220000',7, 13,null)," +
+                "('Sân 5A','150000',5, 14,null)," +
+                "('Sân 5B','150000',5, 14,null)," +
+                "('Sân 5A','150000',5, 11,null)," +
                 "('Sân 5A','150000',5, 7,null)";
         db.execSQL(INSERT_San1);
 
         String INSERT_CumSan = "Insert into CumSan(tenCumSan,diaChi,chuSan) values " +
-                "('Sân Bóng Đá Chuyên Việt','151 Âu Cơ, Hoà Khánh Bắc, Liên Chiểu, Đà Nẵng','0888888888')," +
-                "('Sân Bóng Manchester United','59 Đ. Ngô Thì Nhậm, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng','0888888888')," +
-                "('Sân Bóng đá 360','911 Nguyễn Lương Bằng, Hoà Hiệp Nam, Liên Chiểu, Đà Nẵng','0888888822')," +
-                "('Sân Bóng Liên Chiểu','522 Nguyễn Lương Bằng, Hoà Hiệp Nam, Liên Chiểu, Đà Nẵng','0333333331')," +
-                "('Sân bóng nhân tạo Nam Cao','347X+C74, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng','0888888883')," +
-                "('Sân Bóng Ngọc Thạch','K207 Đ. Phạm Như Xương, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng','0333333331')," +
-                "('Sân bóng An Trung','An Trung 3, An Hải Tây, Sơn Trà, Đà Nẵng','0888888883')," +
-                "('Sân bóng đá T20','Mỹ Khê 4, Phước Mỹ, Sơn Trà, Đà Nẵng','0888888884')," +
-                "('Sân bóng Harmony','Phạm Văn Đồng, An Hải Bắc, Sơn Trà, Đà Nẵng','0888888884')," +
-                "('Sân bóng đá Chuyên Việt','98 Tiểu La, Hòa Thuận Đông, Hải Châu, Đà Nẵng','0888888884')," +
-                "('Sân bóng đá Trang Hoàng','86 Duy Tân, Hòa Thuận Nam, Hải Châu, Đà Nẵng','0333333336')," +
-                "('Sân bóng đá Duy Tân','Hòa Thuận Đông, Hải Châu, Đà Nẵng','0888888885')," +
-                "('Sân Bóng đá An Phúc 2','409 Trưng Nữ Vương, Hòa Thuận Nam, Hải Châu, Đà Nẵng','0333333336')," +
-                "('Sân bóng đá Mỹ Nhật Quang','498 Nguyễn Hữu Thọ, Khuê Trung, Cẩm Lệ, Đà Nẵng','0888888885')," +
-                "('Sân Bóng Đá Mini Việt Hàn','Hoà Hải, Ngũ Hành Sơn, Đà Nẵng','0888888588')," +
-                "('Sân Bóng Đá Thép Việt','Đ. Nghiêm Xuân Yêm, Khuê Mỹ, Ngũ Hành Sơn, Đà Nẵng','0888888884')," +
-                "('Sân bóng đá Minh Hà','Bắc Mỹ Phú, Ngũ Hành Sơn, Đà Nẵng','0888888588')," +
-                "('Sân bóng đá mini Bế Văn Đàn','Bế Văn Đàn, Chính Gián, Thanh Khê, Đà Nẵng','0333333336')," +
-                "('Sân bóng đá An Hà 1','243 Trường Chinh, An Khê, Thanh Khê, Đà Nẵng','0888888881')," +
-                "('Sân Bóng đá An Phúc 1','303 Trưng Nữ Vương, Hòa Thuận Nam, Hải Châu, Đà Nẵng','0333333336')," +
-                "('Sân Bóng Đá Hòa Hán','Đ. Tôn Đản, Hoà Thọ Tây, Cẩm Lệ, Đà Nẵng','0888888882')," +
-                "('Sân Bóng Đá Mini Tuấn Nhàn','Nguyễn Văn Tạo, Hoà An, Cẩm Lệ, Đà Nẵng','0888888883')," +
-                "('Sân Bóng Đá Nhàn','Liên Chiểu - Đà Nẵng','0888888881')";
+                "('Trung tâm TDTT Thanh Đa','1017 Bình Quới, Phường 28, Bình Thạnh, Thành phố Hồ Chí Minh','0888888888')," +
+                "('Sân Bóng Đá HCA','324 Chu Văn An, Phường 12, Bình Thạnh, Thành phố Hồ Chí Minh','0888888888')," +
+                "('Sân Bóng Đá Số 8 CVA','29 Đường Số 8, Phường 26, Bình Thạnh, Thành phố Hồ Chí Minh','0888888822')," +
+                "('Sân Bóng Đá Nhân Tạo Hợp Thành','213 Bình Quới, Phường 28, Bình Thạnh, Thành phố Hồ Chí Minh','0333333331')," +
+                "('Sân Bóng Mini Đào Duy Anh','21 Đào Duy Anh, Phường 9, Quận Phú Nhuận, Thành phố Hồ Chí Minh','0888888883')," +
+                "('Sân Bóng Mini Trần Kế Xương','87A Trần Kế Xương, Phường 7, Quận Phú Nhuận, Thành phố Hồ Chí Minh','0333333331')," +
+                "('Sân Bóng Đá King Sport','36 Hoa Sữa, Phường 7, Quận Phú Nhuận, Thành phố Hồ Chí Minh','0888888883')," +
+                "('Sân bóng Đá Nhân Tạo P9','Sân cỏ nhân tạo Trường THPT Phú Nhuận, Phường 9, Quận Phú Nhuận, Thành phố Hồ Chí Minh','0888888884')," +
+                "('Sân Bóng CLB Quang Tuyến 3','73 Phan Huy Ích, Phường 12, Quận Gò Vấp, Thành phố Hồ Chí Minh,','0888888884')," +
+                "('Sân bóng Đá Cây Trâm',' 19 Phạm Văn Chiêu, Phường 9, Quận Gò Vấp, Thành phố Hồ Chí Minh','0888888884')," +
+                "('Sân bóng Đá An Hội','256 Phan Huy Ích, Phường 12, Quận Gò Vấp, Thành phố Hồ Chí Minh','0333333336')," +
+                "('Sân Bóng Mini Quang Trung','379 Quang Trung, Phường 10, Quận Gò Vấp, Thành phố Hồ Chí Minh','0888888885')," +
+                "('Sân Bóng Mười Thọ','VRC2+2MP, Phường Linh Trung, Thành phố Thủ Đức','0333333336')," +
+                "('Sân Bóng Đá Milano','VQ7C+Q53, Đường số 12, Phường Linh Trung, Thành phố Thủ Đức,','0888888885')," +
+                "('Sân bóng Gò Dưa','Hẻm 54 Đường 36, Linh Đông, Thành phố Thủ Đức','0888888588')";
         db.execSQL(INSERT_CumSan);
 
 

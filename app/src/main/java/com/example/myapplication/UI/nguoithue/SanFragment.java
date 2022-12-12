@@ -274,14 +274,10 @@ public class SanFragment extends Fragment {
 
         ArrayList<String> list = new ArrayList<>();
         list.add("Tất cả");
-        list.add("Quận Cẩm Lệ");
-        list.add("Quận Hải Châu");
-        list.add("Quận Liên Chiểu");
-        list.add("Quận Ngũ Hành Sơn");
-        list.add("Quận Sơn Trà");
-        list.add("Quận Thanh Khê");
-        list.add("Huyện Hòa Vang");
-        list.add("Huyện Trường Sa");
+        list.add("Quận Bình Thạnh");
+        list.add("Quận Phú Nhuận");
+        list.add("Quận Gò Vấp");
+        list.add("TP Thủ Đức");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, list);
 
@@ -303,7 +299,7 @@ public class SanFragment extends Fragment {
                         search(NguoiThueActivity.ddiaiemDC);
                         Toast.makeText(context, "không có sân nào tại "+dd+"\nvui lòng chọn địa điểm khác!!!", Toast.LENGTH_SHORT).show();
                     }else {
-                        Toast.makeText(getContext(), "tìm thấy "+search(textSV)+" kết quả", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Tìm thấy "+search(textSV)+" kết quả tại " + dd, Toast.LENGTH_SHORT).show();
                         NguoiThueActivity.ddiaiemDC = textSV;
                         dialog.dismiss();
                     }

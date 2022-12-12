@@ -12,11 +12,11 @@
         android:icon="@drawable/ic_cumsan"
         android:title="Quản Lý Sân"
         app:cnb_iconColor="@color/white"/>
-    <item
-        android:id="@+id/nav_thong_ke_cs"
-        android:icon="@drawable/ic_baseline_insights_24"
-        android:title="Thống Kê"
-        app:cnb_iconColor="@color/white"/>
+<!--    <item-->
+<!--        android:id="@+id/nav_thong_ke_cs"-->
+<!--        android:icon="@drawable/ic_baseline_insights_24"-->
+<!--        android:title="Thống Kê"-->
+<!--        app:cnb_iconColor="@color/white"/>-->
     <item
         android:id="@+id/nav_ca_nhan_cs"
         android:icon="@drawable/ic_baseline_account_circle_24"

@@ -7,6 +7,7 @@ import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -124,7 +125,7 @@ public class CaSanFragment extends Fragment {
         if (ngay.equals(formatNgay.format(now))){
             Date dateCa = Cover.ThoiGianThueToDate(ngay, String.valueOf(ca));
             if (dateCa.compareTo(now) < 0){
-                Toast.makeText(getContext(), "đã quá thời gian thuê!!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Đã quá thời gian thuê!!!", Toast.LENGTH_SHORT).show();
                 return;
             }
         }
@@ -166,6 +167,9 @@ public class CaSanFragment extends Fragment {
             phieuThue.soKM = km;
             phieuThue.danhGia = 0;
             phieuThue.sao = 0;
+
+            AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+
             if (phieuThueDAO.insert(phieuThue) > 0){
                 Toast.makeText(getContext(), "Thuê thành công", Toast.LENGTH_SHORT).show();
                 setCaSan(ngay);

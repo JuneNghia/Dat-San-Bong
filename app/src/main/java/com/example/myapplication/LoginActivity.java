@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void demo(){
         PhieuThueDAO phieuThueDAO = new PhieuThueDAO(LoginActivity.this);
-        TrangThai trangThai = phieuThueDAO.checkTrangThai(1, "4","06-12-2021" );
+        TrangThai trangThai = phieuThueDAO.checkTrangThai(1, "4","06-12-2022" );
         Log.i("nnnnn", ""+trangThai.toString());
     }
 
@@ -193,14 +193,13 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Tạo tài khoản thành công", Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
                     }else {
-                        Toast.makeText(getApplicationContext(), "Tạo tài khoản không thành công", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Đã xảy ra lỗi khi tạo tài khoản", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         });
         dialog.show();
     }
-
 
 
         @Override
