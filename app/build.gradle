@@ -62,6 +62,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
     implementation 'com.github.jgabrielfreitas:BlurImageView:1.0.1'
 
+    implementation 'com.github.momo-wallet:mobile-sdk:1.0.7'
 
 
 }

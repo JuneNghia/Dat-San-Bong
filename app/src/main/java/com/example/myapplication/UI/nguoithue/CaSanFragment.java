@@ -14,7 +14,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -58,6 +60,7 @@ public class CaSanFragment extends Fragment {
     TextView tv_cumSan_tenSan, tv_diachi, tv_giaSan, tv_gia_thue, tv_thoiGian, btn_huy_thue, btn_thue, tv_km;
     String ngay = "";
     TrangThai trangThai;
+    Button btn_tienmat, btn_momo;
     String phone;
     //int posNow = 0;
     Date now;
@@ -145,6 +148,7 @@ public class CaSanFragment extends Fragment {
         btn_huy_thue = dialog.findViewById(R.id.btn_huy_thue);
         btn_thue = dialog.findViewById(R.id.btn_thue);
 
+
         tv_cumSan_tenSan.setText("Sân: "+cumSanDAO.getCumSanBySan(String.valueOf(san.maSan)).tenCumSan+" - "+san.tenSan);
         tv_diachi.setText("Địa chỉ: "+cumSanDAO.getCumSanBySan(String.valueOf(san.maSan)).diaChi);
         tv_thoiGian.setText(""+Cover.caToTime(String.valueOf(ca))+" ngày: "+ngay);
@@ -168,16 +172,28 @@ public class CaSanFragment extends Fragment {
             phieuThue.danhGia = 0;
             phieuThue.sao = 0;
 
-            AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+            Dialog dialog = new Dialog(getContext());
+            dialog.setContentView(R.layout.dialog_ptthanhtoan);
+            Window window = dialog.getWindow();
+            window.getAttributes().windowAnimations = R.style.DialogAnimation;
+            btn_tienmat = dialog.findViewById(R.id.btn_tienmat);
+            btn_momo = dialog.findViewById(R.id.btn_momo);
 
-            if (phieuThueDAO.insert(phieuThue) > 0){
-                Toast.makeText(getContext(), "Thuê thành công", Toast.LENGTH_SHORT).show();
-                setCaSan(ngay);
+            btn_tienmat.setOnClickListener(v ->{
+                if (phieuThueDAO.insert(phieuThue) > 0){
+                    Toast.makeText(getContext(), "Đặt sân thành công", Toast.LENGTH_SHORT).show();
+                    setCaSan(ngay);
+                    dialog.dismiss();
+                }else {
+                    Toast.makeText(getContext(), "Đã có lỗi xảy ra, vui lòng thử lại sau!", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            btn_momo.setOnClickListener(v ->{
                 dialog.dismiss();
-            }else {
-                Toast.makeText(getContext(), "Đã có lỗi xảy ra, vui lòng thử lại sau!", Toast.LENGTH_SHORT).show();
-            }
+            });
 
+            dialog.show();
         });
 
 

@@ -117,6 +117,7 @@ public class AddSanFragment extends Fragment {
 
             }
         });
+
         btSave.setOnClickListener(v -> {
             if (validate()){
                 dao = new SanDAO(getContext());
