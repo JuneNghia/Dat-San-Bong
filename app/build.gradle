@@ -44,14 +44,11 @@ dependencies {
     //thư viện bo góc ảnh
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
 
-
-    implementation 'com.etebarian:meow-bottom-navigation-java:1.2.0'
     implementation 'com.daimajia.androidanimations:library:2.4@aar'
-    implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.3.3'
+    implementation 'com.github.ismaeldivita:chip-navigation-bar:1.4.0'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.3.70'
-    implementation 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
 
     //thư viện biểu đồ
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
@@ -63,6 +60,4 @@ dependencies {
     implementation 'com.github.jgabrielfreitas:BlurImageView:1.0.1'
 
     implementation 'com.github.momo-wallet:mobile-sdk:1.0.7'
-
-
 }
